@@ -8,7 +8,7 @@ function Display({ data }) {
             <p><strong>Tuổi:</strong> {data.age}</p>
             <p><strong>Số điện thoại:</strong> {data.phone}</p>
             <p><strong>Email:</strong> {data.email}</p>
-            <p><strong>Ghi chú:</strong> {data.note}</p>
+            <p className='h-[100px] break-words'><strong>Ghi chú:</strong> {data.note}</p>
             <form className='mt-[30px]'>
               <input type="submit" value="ĐĂNG KÝ LẠI" className="bg-[blue] text-[white] w-full cursor-pointer py-[10px] rounded-xl mb-[20px]" />
             </form>

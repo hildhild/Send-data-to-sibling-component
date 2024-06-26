@@ -25,16 +25,16 @@ function Form({ onFormSubmit }) {
         }
       };
     
-      const handleSubmit = (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault(); //Ngăn chặn hành vi mặc định (load lại trang)
         const formData = { name, age, phone, email, note };
-        const inputs = document.getElementsByTagName('input');
+        const inputs = document.getElementsByTagName('input'); //chi can set props disabled = {submitted?}
         for (let i = 0; i < inputs.length; i++) {
             inputs[i].disabled = true;
         }
         document.getElementsByTagName('textarea')[0].disabled = true;
         onFormSubmit(formData);
-      };
+    };
     
     return (
       <div className="px-[15px] border-r-[1px] border-solid">
