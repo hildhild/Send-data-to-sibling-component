@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Form from './components/Form'
+import Display from './components/Display'
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [formData, setFormData] = useState(null);
+
+    const handleFormSubmit = (data) => {
+        setFormData(data);
+    };
+
+  
+    return (
+        <div className="grid grid-cols-2 h-full">
+            <Form onFormSubmit={handleFormSubmit}></Form>
+            {formData && <Display data={formData} />}
+        </div>
+    );
 }
 
 export default App;
